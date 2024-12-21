@@ -257,9 +257,34 @@
 						"internalType": "string",
 						"name": "courseName",
 						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "expGained",
+						"type": "uint256"
 					}
 				],
 				"name": "CertificateMinted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "student",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newLevel",
+						"type": "uint256"
+					}
+				],
+				"name": "LevelUp",
 				"type": "event"
 			},
 			{
@@ -460,6 +485,47 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "limit",
+						"type": "uint256"
+					}
+				],
+				"name": "getLeaderboard",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "student",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "level",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "exp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "completedCourses",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct BlockLearnCertificate.LeaderboardEntry[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "owner",
 						"type": "address"
@@ -629,6 +695,35 @@
 				"name": "setApprovalForAll",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "studentInfo",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "level",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "exp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "completedCoursesCount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -1137,11 +1232,11 @@
 			]
 		},
 		"contracts/BlockLearn.sol": {
-			"keccak256": "0xa252c1e8175d6aea5ae323c277d01eb16c71437ef32150d2be2fe3ce23f5b2ce",
+			"keccak256": "0x75a31cfb00142d1ffd844d7d3daddfbfbcd313827d86ae7f52dc97b5a873b6ee",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://25db9ffacaa3125a501974db61d0a6c7b6595d0d891f30dbc497bb33d3e07f9b",
-				"dweb:/ipfs/QmcDz4cpGfdmRSZcq94oRAknHP2oLdrNbCrUe2McnJ9xSn"
+				"bzz-raw://b27f85ab9f7b8f9e605d4707101de986fdec6d78b5b7666014a4cd3d8066bfb3",
+				"dweb:/ipfs/QmbJX3mi14PkNi2UaWVfHrMs9o4vfx8A9xLa4nVjLRF8NC"
 			]
 		}
 	},
